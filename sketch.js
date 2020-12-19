@@ -6,16 +6,12 @@ var boy;
 var maxDrops = 100;
 var drops = [];
 
-function preload(){
-    thisimage = loadImage("images/Walking Frame/walking_1.png");
-}
-
 function setup(){
     createCanvas(400,780);
     engine = Engine.create();
     world = engine.world;
 
-    boy = new Umbrella(200,800);
+    boy = new Umbrella(200,400);
     
     for(var i=0;i<maxDrops;i++){
         drops.push(new Drops(random(0,400),random(0,400)));
@@ -33,8 +29,6 @@ function draw(){
         }
     }
 
-
-    image(thisimage,200,800,100,100);
     boy.display();
 
     for(var i=0;i<maxDrops;i++){
